@@ -35,14 +35,14 @@ def update_profile(rut):
     if 'frameworks' in data:
         Framework.query.filter_by(user_rut=user.rut).delete()
         for framework_data in data['frameworks']:
-            framework = Framework(name=framework_data['name'], level=framework_data['level'], user_rut=user.rut)
+            framework = Framework(name=framework_data['name'], level=framework_data['level'],año = framework_data['año'], user_rut=user.rut)
             db.session.add(framework)
 
     # Actualizar los hobbies
     if 'hobbies' in data:
         Hobby.query.filter_by(user_rut=user.rut).delete()
         for hobby_data in data['hobbies']:
-            hobby = Hobby(name=hobby_data['name'], user_rut=user.rut)
+            hobby = Hobby(name=hobby_data['name'],summary = ['summary'], user_rut=user.rut)
             db.session.add(hobby)
 
     db.session.commit()

@@ -16,18 +16,18 @@ def add_seed_data():
     # Añadir Frameworks
 
     frameworks = [
-        Framework(name="Laravel", level="30%", user_rut=user.rut),
-        Framework(name="PowerBI", level="60%", user_rut=user.rut),
-        Framework(name="Python", level="75%", user_rut=user.rut)
+        Framework(name="Laravel", level="30%",año = "2019", user_rut=user.rut),
+        Framework(name="PowerBI", level="60%",año="2022", user_rut=user.rut),
+        Framework(name="Python", level="75%",año="2018", user_rut=user.rut)
     ]
 
 
 
     # Añadir Hobbies
     hobbies = [
-        Hobby(name="E-Sports", user_rut=user.rut),
-        Hobby(name="Anime", user_rut=user.rut),
-        Hobby(name="Musica", user_rut=user.rut)
+        Hobby(name="E-Sports",summary="videojuegos competitivos", user_rut=user.rut),
+        Hobby(name="Anime",summary="series animadas", user_rut=user.rut),
+        Hobby(name="Musica",summary="relajacion", user_rut=user.rut)
     ]
 
     # Añadir a la sesión de la base de datos

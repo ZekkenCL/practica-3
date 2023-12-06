@@ -26,14 +26,16 @@ class Framework(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     level = db.Column(db.String(100))
+    año = db.Column(db.Integer)
     user_rut = db.Column(db.String(12), db.ForeignKey('user.rut'))
     def to_dict(self):
-        return {"name": self.name, "level": self.level}
+        return {"name": self.name, "level": self.level, "año": self.año}
 
 class Hobby(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
+    summary = db.Column(db.Text)
     user_rut = db.Column(db.String(12), db.ForeignKey('user.rut'))
     def to_dict(self):
-        return {"name": self.name}
+        return {"name": self.name, "summary": self.summary}
 

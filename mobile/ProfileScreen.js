@@ -167,6 +167,13 @@ const ProfileScreen = () => {
                 style={styles.input}
                 mode="outlined"
               />
+                <TextInput
+                label="Año"
+                value={framework.año}
+                onChangeText={(text) => handleFrameworkChange(index, 'año', text)}
+                style={styles.input}
+                mode="outlined"
+                />
             </View>
           ))}
           </Card.Content>
@@ -184,6 +191,13 @@ const ProfileScreen = () => {
                 style={styles.input}
                 mode="outlined"
               />
+                <TextInput
+                label="Descripcion"
+                value={hobby.summary}
+                onChangeText={(text) => handleHobbyChange(index,'summary', text)}
+                style={styles.input}
+                mode="outlined"
+                />
             </View>
           ))}
           </Card.Content>
@@ -242,12 +256,14 @@ const ProfileScreen = () => {
                 <DataTable.Header>
                   <DataTable.Title>Framework</DataTable.Title>
                   <DataTable.Title>Nivel</DataTable.Title>
+                  <DataTable.Title>Año</DataTable.Title>
                 </DataTable.Header>
 
                 {profile.frameworks.map((framework, index) => (
                   <DataTable.Row key={index}>
                     <DataTable.Cell>{framework.name}</DataTable.Cell>
                     <DataTable.Cell>{framework.level}</DataTable.Cell>
+                    <DataTable.Cell>{framework.año}</DataTable.Cell>
                   </DataTable.Row>
                 ))}
               </DataTable>
@@ -262,15 +278,18 @@ const ProfileScreen = () => {
               onDismiss={toggleHobbiesModal}
               contentContainerStyle={styles.modal}
             >
-              <List.Section title="Hobbies">
+                <DataTable>
+                <DataTable.Header>
+                  <DataTable.Title>Hobby</DataTable.Title>
+                  <DataTable.Title>Descripcion</DataTable.Title>
+                </DataTable.Header>
                 {profile.hobbies.map((hobby, index) => (
-                  <List.Item
-                    key={index}
-                    title={hobby.name}
-                    left={(props) => <List.Icon {...props} icon="brush" />}
-                  />
+                  <DataTable.Row key={index}>
+                    <DataTable.Cell>{hobby.name}</DataTable.Cell>
+                    <DataTable.Cell>{hobby.summary}</DataTable.Cell>
+                    </DataTable.Row>
                 ))}
-              </List.Section>
+                </DataTable>
               <Button mode="contained" onPress={toggleHobbiesModal}>
                 Cerrar
               </Button>
