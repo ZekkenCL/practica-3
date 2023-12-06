@@ -92,57 +92,102 @@ const ProfileScreen = () => {
     <ScrollView style={styles.container}>
       {isEditing ? (
         <View style={styles.form}>
-        <TextInput
-          label="Nombre"
-          value={editedProfile.name}
-          onChangeText={(text) => handleInputChange('name', text)}
-        />
-        <TextInput
-          label="Email"
-          value={editedProfile.email}
-          onChangeText={(text) => handleInputChange('email', text)}
-        />
-        <TextInput
-            label="Ciudad"
-            value={editedProfile.city}
-            onChangeText={(text) => handleInputChange('city', text)}
-        />
-        <TextInput
-            label="País"
-            value={editedProfile.country}
-            onChangeText={(text) => handleInputChange('country', text)}
-        />
-        <TextInput
-            label="Descripción"
-            value={editedProfile.summary}
-            onChangeText={(text) => handleInputChange('summary', text)}
-        />
+        <Card style={styles.card}>
+          <Card.Title title="Editar Perfil" />
+          <Card.Content>
+            <TextInput
+              label="Nombre"
+              value={editedProfile.name}
+              onChangeText={(text) => handleInputChange('name', text)}
+              style={styles.input}
+              mode="outlined"
+              right={<TextInput.Icon name="account" />}
+            />
+            <TextInput
+                label="Email"
+                value={editedProfile.email}
+                onChangeText={(text) => handleInputChange('email', text)}
+                style={styles.input}
+                mode="outlined"
+                right={<TextInput.Icon name="email" />}
+                />
+            <TextInput
+                label="Ciudad"
+                value={editedProfile.city}
+                onChangeText={(text) => handleInputChange('city', text)}
+                style={styles.input}
+                mode="outlined"
+                right={<TextInput.Icon name="city" />}
+                />  
+            <TextInput
+                label="País"
+                value={editedProfile.country}
+                onChangeText={(text) => handleInputChange('country', text)}
+                style={styles.input}
+                mode="outlined"
+                right={<TextInput.Icon name="city" />}
+                />
+          </Card.Content>
+        </Card>
+
+        <Card style={styles.card}>
+            <Card.Title title="Editar Descripcion" />
+            <Card.Content>
+                <TextInput
+                    label="Descripcion"
+                    value={editedProfile.summary}
+                    onChangeText={(text) => handleInputChange('summary', text)}
+                    style={styles.input}
+                    mode="outlined"
+                    multiline={true}
+                    numberOfLines={5}
+                    right={<TextInput.Icon name="text" />}
+                />
+            </Card.Content>
+        </Card>
+
           {/* Campos para editar frameworks */}
+
+          <Card style={styles.card}>
+          <Card.Title title="Editar Frameworks" />
+          <Card.Content>
           {editedFrameworks.map((framework, index) => (
             <View key={index} style={styles.frameworkContainer}>
               <TextInput
                 label="Framework"
                 value={framework.name}
                 onChangeText={(text) => handleFrameworkChange(index, 'name', text)}
+                style={styles.input}
+                mode="outlined"
               />
               <TextInput
                 label="Nivel"
                 value={framework.level}
                 onChangeText={(text) => handleFrameworkChange(index, 'level', text)}
+                style={styles.input}
+                mode="outlined"
               />
             </View>
           ))}
-          
-          {/* Campos para editar hobbies */}
+          </Card.Content>
+        </Card>
+
+        <Card style={styles.card}>
+          <Card.Title title="Editar Hobbies" />
+          <Card.Content>
           {editedHobbies.map((hobby, index) => (
             <View key={index} style={styles.hobbyContainer}>
               <TextInput
                 label="Hobby"
                 value={hobby.name}
                 onChangeText={(text) => handleHobbyChange(index,'name', text)}
+                style={styles.input}
+                mode="outlined"
               />
             </View>
           ))}
+          </Card.Content>
+        </Card>
 
 
           {/* Botones para guardar o cancelar */}
