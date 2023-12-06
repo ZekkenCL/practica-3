@@ -1,11 +1,14 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import ProfileScreen from './ProfileScreen';
+import { Provider as PaperProvider } from 'react-native-paper';
+import ProfileScreen from './ProfileScreen'; // Asegúrate de importar tu pantalla aquí
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <ProfileScreen />
+      <PaperProvider>
+        <ProfileScreen />
+      </PaperProvider>
     </SafeAreaProvider>
   );
 }

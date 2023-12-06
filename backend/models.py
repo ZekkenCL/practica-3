@@ -13,6 +13,7 @@ class User(db.Model):
     def to_dict(self):
         return {
             "name": self.name,
+            "rut": self.rut,
             "email": self.email,
             "city": self.city,
             "country": self.country,
