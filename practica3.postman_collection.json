@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "e09ae13f-c192-4cae-a3ca-a704c372595e",
+		"name": "practica3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31109913"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/api/profile/12345678-9",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"Chañasdddral\",\r\n    \"country\": \"Childdse\",\r\n    \"email\": \"benidddddto.munoz@alumnos.ucn.cl\",\r\n    \"frameworks\": [\r\n        {\r\n            \"level\": \"30%\",\r\n            \"name\": \"Larvel\"\r\n        },\r\n        {\r\n            \"level\": \"60%\",\r\n            \"name\": \"PowerBI\"\r\n        },\r\n        {\r\n            \"level\": \"75%\",\r\n            \"name\": \"Pyonn\"\r\n        }\r\n    ],\r\n    \"hobbies\": [\r\n        {\r\n            \"name\": \"E-Sporsts\"\r\n        },\r\n        {\r\n            \"name\": \"Anisme\"\r\n        },\r\n        {\r\n            \"name\": \"Musicas\"\r\n        }\r\n    ],\r\n    \"name\": \"Benito Segundo Alvarez\",\r\n    \"rut\": \"12345678-9\",\r\n    \"summary\": \" de La universidad Catolica del Norte interesado en el desarrollo web y movil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/profile/12345678-9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"12345678-9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/api/profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
